@@ -1,0 +1,4 @@
+- express
+- typeorm
+- type-graphql
+- mysql
