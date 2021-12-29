@@ -18,8 +18,12 @@
    "devDependencies": {
       "@types/express": "^4.17.13",
       "@types/node": "^8.0.29",
+      "@typescript-eslint/eslint-plugin": "^5.8.1",
+      "@typescript-eslint/parser": "^5.8.1",
       "eslint": "^8.5.0",
-      "husky": "^7.0.4",
+      "eslint-config-prettier": "^8.3.0",
+      "eslint-plugin-prettier": "^4.0.0",
+      "husky": "4",
       "lint-staged": "^12.1.4",
       "nodemon": "^2.0.15",
       "prettier": "^2.5.1",
@@ -30,7 +34,10 @@
    "scripts": {
       "dev": "nodemon -L",
       "start": "ts-node src/index.ts",
-      "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+      "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+      "lint": "eslint",
+      "fix": "eslint --fix",
+      "prettier": "prettier --write"
    },
    "husky": {
       "hooks": {
@@ -40,8 +47,7 @@
    "lint-staged": {
       "src/**/*.{js,jsx,ts,tsx}": [
          "eslint --fix",
-         "prettier --write",
-         "git add"
+         "prettier --write"
       ]
    }
 }
