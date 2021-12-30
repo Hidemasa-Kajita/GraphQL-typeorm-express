@@ -1,13 +1,9 @@
 import 'reflect-metadata'
-import { createConnection, Repository, useContainer } from 'typeorm'
+import { createConnection } from 'typeorm'
 import { ApolloServer } from 'apollo-server'
 import { buildSchema } from 'type-graphql'
 import { UserQueryResolver } from './resolver/user/UserQueryResolver'
 import { UserMutationResolver } from './resolver/user/UserMutationResolver'
-import Container from 'typedi'
-import { UserRepository } from './repository/UserRepository'
-import { User } from './entity/User'
-
 const bootstrap = async () => {
   const schema = await buildSchema({
     resolvers: [UserQueryResolver, UserMutationResolver],

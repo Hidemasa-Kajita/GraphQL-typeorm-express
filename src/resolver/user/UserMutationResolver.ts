@@ -1,7 +1,7 @@
 import { Resolver, Arg, Ctx, Mutation } from 'type-graphql'
 import { User } from '../../entity/User'
 import { Context } from 'apollo-server-core'
-import { getCustomRepository, getRepository } from 'typeorm'
+import { getCustomRepository } from 'typeorm'
 import { CreateUserInput } from '../../input/user/CreateUserInput'
 import { UpdateUserInput } from '../../input/user/UpdateUserInput'
 import { UserRepository } from '../../repository/UserRepository'

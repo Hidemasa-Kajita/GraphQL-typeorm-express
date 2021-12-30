@@ -1,4 +1,3 @@
-import { Service } from 'typedi'
 import { EntityRepository, Repository } from 'typeorm'
 import { User } from '../entity/User'
 

@@ -1,7 +1,6 @@
 import { Resolver, Query, Arg } from 'type-graphql'
 import { User } from '../../entity/User'
-import { getCustomRepository, getRepository, Repository } from 'typeorm'
-import { Inject, Service } from 'typedi'
+import { getCustomRepository } from 'typeorm'
 import { UserRepository } from '../../repository/UserRepository'
 
 @Resolver()
