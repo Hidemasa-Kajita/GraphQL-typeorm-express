@@ -1,20 +1,24 @@
 import { Resolver, Query, Arg } from 'type-graphql'
 import { User } from '../../entity/User'
-import { getRepository } from 'typeorm'
+import { getCustomRepository, getRepository, Repository } from 'typeorm'
+import { Inject, Service } from 'typedi'
+import { UserRepository } from '../../repository/UserRepository'
 
 @Resolver()
 export class UserQueryResolver {
+  private userRepository: UserRepository
+
+  constructor() {
+    this.userRepository = getCustomRepository(UserRepository)
+  }
+
   @Query((_) => User, { nullable: true })
   async user(@Arg('id') id: number): Promise<User | undefined> {
-    const userRepository = getRepository(User)
-
-    return await userRepository.findOne(id)
+    return await this.userRepository.findOne(id)
   }
 
   @Query((_) => [User])
   async users(): Promise<User[]> {
-    const userRepository = getRepository(User)
-
-    return await userRepository.find()
+    return await this.userRepository.find()
   }
 }
