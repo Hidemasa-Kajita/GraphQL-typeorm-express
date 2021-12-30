@@ -2,11 +2,12 @@ import 'reflect-metadata'
 import { createConnection } from 'typeorm'
 import { ApolloServer } from 'apollo-server'
 import { buildSchema } from 'type-graphql'
-import { UserResolver } from './resolver/UserResolver'
+import { UserQueryResolver } from './resolver/user/UserQueryResolver'
+import { UserMutationResolver } from './resolver/user/UserMutationResolver'
 
 const bootstrap = async () => {
   const schema = await buildSchema({
-    resolvers: [UserResolver],
+    resolvers: [UserQueryResolver, UserMutationResolver],
   })
 
   const server = new ApolloServer({
@@ -16,7 +17,7 @@ const bootstrap = async () => {
   await createConnection()
 
   const { url } = await server.listen(3001)
-  console.log(`Server is running, GraphQL Playground available at ${url}`)
+  console.log(`Server is running, GraphQL Playground available at ${url}graphql`)
 }
 
 bootstrap()
