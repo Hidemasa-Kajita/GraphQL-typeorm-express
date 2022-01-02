@@ -1,0 +1,17 @@
+version: '3'
+
+tasks:
+  setup:
+    cmds:
+      - yarn
+      - cp .env.local .env
+      - docker compose build
+  
+  up:
+    cmds:
+      - docker compose up -d
+      - yarn dev
+
+  stop:
+    cmds:
+      - docker compose stop
