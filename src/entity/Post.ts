@@ -47,8 +47,10 @@ export class Post {
 
   @ManyToOne((_) => User, (user) => user.posts)
   @JoinColumn({ name: 'user_id' })
+  @Field((_) => User)
   user?: User
 
   @OneToMany((_) => Comment, (comments) => comments.post)
+  @Field((_) => [Comment])
   comments?: Comment[]
 }

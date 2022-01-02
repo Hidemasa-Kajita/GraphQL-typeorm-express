@@ -44,8 +44,10 @@ export class User {
   }
 
   @OneToMany((_) => Post, (posts) => posts.user)
+  @Field((_) => [Post])
   posts?: Post[]
 
   @OneToMany((_) => Comment, (comments) => comments.user)
+  @Field((_) => [Comment])
   comments?: Comment[]
 }
