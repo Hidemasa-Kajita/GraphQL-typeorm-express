@@ -13,7 +13,6 @@ export const authentication: MiddlewareFn<Context> = ({ context }, next) => {
   try {
     const token = (authorization as string).split(' ')[1]
     const payload = verify(token, secretKey)
-    console.log(payload)
     context.payload = payload as any
   } catch (err) {
     console.log(err)
