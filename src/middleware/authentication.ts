@@ -1,7 +1,7 @@
 import { MiddlewareFn } from 'type-graphql'
 import { verify } from 'jsonwebtoken'
-import { Context } from '../types/Context'
-import { secretKey } from '../config/jwt'
+import { Context } from '~/types/Context'
+import { secretKey } from '~/config/jwt'
 
 export const authentication: MiddlewareFn<Context> = ({ context }, next) => {
   const authorization = context.req.headers['authorization']

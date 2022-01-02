@@ -9,8 +9,8 @@ import {
   OneToMany,
 } from 'typeorm'
 import { ObjectType, Field, ID } from 'type-graphql'
-import { User } from './User'
-import { Comment } from './Comment'
+import { User } from '~/entity/User'
+import { Comment } from '~/entity/Comment'
 
 @Entity('posts')
 @ObjectType()

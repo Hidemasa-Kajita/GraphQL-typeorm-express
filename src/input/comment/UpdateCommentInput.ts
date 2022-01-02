@@ -1,6 +1,6 @@
 import { MaxLength } from 'class-validator'
 import { InputType, Field } from 'type-graphql'
-import { Comment } from '../../entity/Comment'
+import { Comment } from '~/entity/Comment'
 
 @InputType({ description: 'New Post Argument' })
 export class UpdateCommentInput implements Partial<Comment> {

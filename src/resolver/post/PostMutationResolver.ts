@@ -1,10 +1,10 @@
 import { Resolver, Arg, Ctx, Mutation } from 'type-graphql'
-import { Context } from '../../types/Context'
+import { Context } from '~/types/Context'
 import { getCustomRepository } from 'typeorm'
-import { PostRepository } from '../../repository/PostRepository'
-import { CreatePostInput } from '../../input/post/CreatePostInput'
-import { Post } from '../../entity/Post'
-import { UpdatePostInput } from '../../input/post/UpdatePostInput'
+import { PostRepository } from '~/repository/PostRepository'
+import { CreatePostInput } from '~/input/post/CreatePostInput'
+import { Post } from '~/entity/Post'
+import { UpdatePostInput } from '~/input/post/UpdatePostInput'
 
 @Resolver()
 export class PostMutationResolver {

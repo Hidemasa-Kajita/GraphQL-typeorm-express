@@ -8,8 +8,8 @@ import {
   JoinColumn,
 } from 'typeorm'
 import { ObjectType, Field, ID } from 'type-graphql'
-import { Post } from './Post'
-import { User } from './User'
+import { Post } from '~/entity/Post'
+import { User } from '~/entity/User'
 
 @Entity('comments')
 @ObjectType()

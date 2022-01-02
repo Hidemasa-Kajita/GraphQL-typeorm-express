@@ -3,13 +3,15 @@ import { createConnection } from 'typeorm'
 import { ApolloServer } from 'apollo-server-express'
 import express from 'express'
 import { buildSchema } from 'type-graphql'
-import { UserQueryResolver } from './resolver/user/UserQueryResolver'
-import { UserMutationResolver } from './resolver/user/UserMutationResolver'
-import { PostMutationResolver } from './resolver/post/PostMutationResolver'
-import { PostQueryResolver } from './resolver/post/PostQueryResolver'
-import { CommentQueryResolver } from './resolver/comment/CommentQueryResolver'
-import { CommentMutationResolver } from './resolver/comment/CommentMutationResolver'
-import { AuthResolver } from './resolver/AuthResolver'
+import { UserQueryResolver } from '~/resolver/user/UserQueryResolver'
+import { UserMutationResolver } from '~/resolver/user/UserMutationResolver'
+import { PostMutationResolver } from '~/resolver/post/PostMutationResolver'
+import { PostQueryResolver } from '~/resolver/post/PostQueryResolver'
+import { CommentQueryResolver } from '~/resolver/comment/CommentQueryResolver'
+import { CommentMutationResolver } from '~/resolver/comment/CommentMutationResolver'
+import { AuthResolver } from '~/resolver/AuthResolver'
+
+console.log('waiting...')
 
 const bootstrap = async () => {
   const app = express()

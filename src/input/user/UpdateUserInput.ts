@@ -1,6 +1,6 @@
 import { MaxLength } from 'class-validator'
 import { InputType, Field } from 'type-graphql'
-import { User } from '../../entity/User'
+import { User } from '~/entity/User'
 
 @InputType({ description: 'Update User Argument' })
 export class UpdateUserInput implements Partial<User> {

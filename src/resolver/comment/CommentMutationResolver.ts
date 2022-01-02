@@ -1,11 +1,11 @@
 import { Resolver, Arg, Ctx, Mutation, UseMiddleware } from 'type-graphql'
-import { Context } from '../../types/Context'
+import { Context } from '~/types/Context'
 import { getCustomRepository } from 'typeorm'
-import { CommentRepository } from '../../repository/CommentRepository'
-import { Comment } from '../../entity/Comment'
-import { CreateCommentInput } from '../../input/comment/CreateCommentInput'
-import { UpdateCommentInput } from '../../input/comment/UpdateCommentInput'
-import { authentication } from '../../middleware/authentication'
+import { CommentRepository } from '~/repository/CommentRepository'
+import { Comment } from '~/entity/Comment'
+import { CreateCommentInput } from '~/input/comment/CreateCommentInput'
+import { UpdateCommentInput } from '~/input/comment/UpdateCommentInput'
+import { authentication } from '~/middleware/authentication'
 
 @Resolver()
 export class CommentMutationResolver {

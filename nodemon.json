@@ -10,5 +10,5 @@
   "ignore": [
     "tests/**/*.ts"
   ],
-  "exec": "ts-node ./src/index.ts"
+  "exec": "ts-node -r tsconfig-paths/register ./src/index.ts"
 }

@@ -1,6 +1,6 @@
 import { MaxLength } from 'class-validator'
 import { InputType, Field } from 'type-graphql'
-import { Post } from '../../entity/Post'
+import { Post } from '~/entity/Post'
 
 @InputType({ description: 'New Post Argument' })
 export class CreatePostInput implements Partial<Post> {

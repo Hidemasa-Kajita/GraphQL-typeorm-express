@@ -1,10 +1,10 @@
 import { Arg, Field, Mutation, ObjectType } from 'type-graphql'
 import { getCustomRepository } from 'typeorm'
-import { UserRepository } from '../repository/UserRepository'
+import { UserRepository } from '~/repository/UserRepository'
 import { LoginInput } from '../input/auth/LoginInput'
 import { sign } from 'jsonwebtoken'
 import { compare } from 'bcryptjs'
-import { secretKey } from '../config/jwt'
+import { secretKey } from '~/config/jwt'
 
 @ObjectType()
 class LoginResponse {

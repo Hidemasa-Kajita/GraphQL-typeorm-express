@@ -1,8 +1,8 @@
 import { Resolver, Query, Arg, UseMiddleware } from 'type-graphql'
 import { getCustomRepository } from 'typeorm'
-import { CommentRepository } from '../../repository/CommentRepository'
-import { Comment } from '../../entity/Comment'
-import { authentication } from '../../middleware/authentication'
+import { CommentRepository } from '~/repository/CommentRepository'
+import { Comment } from '~/entity/Comment'
+import { authentication } from '~/middleware/authentication'
 
 @Resolver()
 export class CommentQueryResolver {

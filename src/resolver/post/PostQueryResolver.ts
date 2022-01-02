@@ -1,8 +1,8 @@
 import { Resolver, Query, Arg, UseMiddleware } from 'type-graphql'
 import { getCustomRepository } from 'typeorm'
-import { PostRepository } from '../../repository/PostRepository'
-import { Post } from '../../entity/Post'
-import { authentication } from '../../middleware/authentication'
+import { PostRepository } from '~/repository/PostRepository'
+import { Post } from '~/entity/Post'
+import { authentication } from '~/middleware/authentication'
 
 @Resolver()
 export class PostQueryResolver {
