@@ -6,13 +6,13 @@ import { User } from '../../entity/User'
 export class CreateUserInput implements Partial<User> {
   @Field()
   @MaxLength(255)
-  name?: string
+  name!: string
 
   @Field()
   @MaxLength(255)
-  email?: string
+  email!: string
 
   @Field()
   @MaxLength(255)
-  password?: string
+  password!: string
 }

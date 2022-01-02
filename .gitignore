@@ -6,3 +6,4 @@ tmp/
 temp/
 .env
 docker/mysql/logs
+yarn-error.log

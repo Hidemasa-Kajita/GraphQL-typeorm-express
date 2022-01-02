@@ -54,7 +54,7 @@ export class Comment {
   @Field((_) => Post)
   post?: Post
 
-  @ManyToOne((_) => Comment, (comment) => comment.user)
+  @ManyToOne((_) => User, (user) => user.comments)
   @JoinColumn({ name: 'user_id' })
   @Field((_) => User)
   user?: User

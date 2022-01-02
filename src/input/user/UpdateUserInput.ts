@@ -14,8 +14,4 @@ export class UpdateUserInput implements Partial<User> {
   @Field()
   @MaxLength(255)
   email?: string
-
-  @Field()
-  @MaxLength(255)
-  password?: string
 }
