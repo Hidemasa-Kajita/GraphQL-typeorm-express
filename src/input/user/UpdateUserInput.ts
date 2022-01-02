@@ -9,12 +9,13 @@ export class UpdateUserInput implements Partial<User> {
 
   @Field()
   @MaxLength(255)
-  firstName?: string
+  name?: string
 
   @Field()
   @MaxLength(255)
-  lastName?: string
+  email?: string
 
   @Field()
-  age?: number
+  @MaxLength(255)
+  password?: string
 }

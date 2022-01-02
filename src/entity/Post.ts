@@ -4,30 +4,32 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
   OneToMany,
 } from 'typeorm'
 import { ObjectType, Field, ID } from 'type-graphql'
-import { Post } from './Post'
+import { User } from './User'
 import { Comment } from './Comment'
 
-@Entity('users')
+@Entity('posts')
 @ObjectType()
-export class User {
+export class Post {
   @PrimaryGeneratedColumn()
   @Field((_) => ID)
   id!: number
 
   @Column()
-  @Field()
-  name: string
+  @Field((_) => ID)
+  user_id: number
 
   @Column()
   @Field()
-  email: string
+  title: string
 
   @Column()
   @Field()
-  password: string
+  content: string
 
   @CreateDateColumn()
   @Field()
@@ -37,15 +39,16 @@ export class User {
   @Field()
   updated_at!: Date
 
-  constructor(name: string, email: string, password: string) {
-    this.name = name
-    this.email = email
-    this.password = password
+  constructor(user_id: number, title: string, content: string) {
+    this.user_id = user_id
+    this.title = title
+    this.content = content
   }
 
-  @OneToMany((_) => Post, (posts) => posts.user)
-  posts?: Post[]
+  @ManyToOne((_) => User, (user) => user.posts)
+  @JoinColumn({ name: 'user_id' })
+  user?: User
 
-  @OneToMany((_) => Comment, (comments) => comments.user)
+  @OneToMany((_) => Comment, (comments) => comments.post)
   comments?: Comment[]
 }
