@@ -1,6 +1,6 @@
 import { Resolver, Arg, Ctx, Mutation, UseMiddleware } from 'type-graphql'
-import { Context } from '~/types/Context'
 import { getCustomRepository } from 'typeorm'
+import { Context } from '~/types/Context'
 import { CommentRepository } from '~/repository/CommentRepository'
 import { Comment } from '~/entity/Comment'
 import { CreateCommentInput } from '~/input/comment/CreateCommentInput'

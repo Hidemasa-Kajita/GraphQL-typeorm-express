@@ -1,6 +1,6 @@
 import { Resolver, Arg, Ctx, Mutation } from 'type-graphql'
-import { Context } from '~/types/Context'
 import { getCustomRepository } from 'typeorm'
+import { Context } from '~/types/Context'
 import { PostRepository } from '~/repository/PostRepository'
 import { CreatePostInput } from '~/input/post/CreatePostInput'
 import { Post } from '~/entity/Post'

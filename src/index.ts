@@ -11,6 +11,7 @@ import { CommentQueryResolver } from '~/resolver/comment/CommentQueryResolver'
 import { CommentMutationResolver } from '~/resolver/comment/CommentMutationResolver'
 import { AuthResolver } from '~/resolver/AuthResolver'
 
+// eslint-disable-next-line no-console
 console.log('waiting...')
 
 const bootstrap = async () => {
@@ -39,6 +40,7 @@ const bootstrap = async () => {
   server.applyMiddleware({ app })
 
   app.listen(3001, () => {
+    // eslint-disable-next-line no-console
     console.log('Express server started at localhost:3001/graphql')
   })
 }

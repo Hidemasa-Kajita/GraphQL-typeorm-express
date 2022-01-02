@@ -1,9 +1,8 @@
-import { Resolver, Query, Arg, UseMiddleware, Ctx } from 'type-graphql'
-import { User } from '../../entity/User'
+import { Resolver, Query, Arg, UseMiddleware } from 'type-graphql'
 import { getCustomRepository } from 'typeorm'
-import { UserRepository } from '../../repository/UserRepository'
-import { authentication } from '../..//middleware/authentication'
-import { Context } from '../../types/Context'
+import { User } from '~/entity/User'
+import { UserRepository } from '~/repository/UserRepository'
+import { authentication } from '~/middleware/authentication'
 
 @Resolver()
 export class UserQueryResolver {

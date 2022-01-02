@@ -1,12 +1,11 @@
-import { Resolver, Arg, Ctx, Mutation, UseMiddleware } from 'type-graphql'
-import { User } from '../../entity/User'
-import { Context } from '../../types/Context'
+import { Resolver, Arg, Mutation, UseMiddleware } from 'type-graphql'
 import { getCustomRepository } from 'typeorm'
-import { CreateUserInput } from '../../input/user/CreateUserInput'
-import { UpdateUserInput } from '../../input/user/UpdateUserInput'
-import { UserRepository } from '../../repository/UserRepository'
 import { hash } from 'bcryptjs'
-import { authentication } from '../../middleware/authentication'
+import { User } from '~/entity/User'
+import { CreateUserInput } from '~/input/user/CreateUserInput'
+import { UpdateUserInput } from '~/input/user/UpdateUserInput'
+import { UserRepository } from '~/repository/UserRepository'
+import { authentication } from '~/middleware/authentication'
 
 @Resolver()
 export class UserMutationResolver {
