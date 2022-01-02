@@ -22,3 +22,10 @@ open [http://localhost:3001/graphql](http://localhost:3001/graphql)
 ```
 $ task stop
 ```
+
+# TODO
+- paginate
+- jwt refresh
+- cors
+- cache
+- security
