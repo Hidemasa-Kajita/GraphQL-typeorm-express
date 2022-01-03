@@ -24,6 +24,7 @@ $ task stop
 ```
 
 # TODO
+- subscription
 - paginate
 - jwt refresh
 - cors
